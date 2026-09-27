@@ -1,0 +1,15 @@
+{
+	"name": "ecommerce-adf-dev",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1eed2bf8-64ad-4bad-8c6e-9c58cd3570d9",
+		"tenantId": "e37f9ee9-59a5-4e49-8203-7f2b0b9b5d1d"
+	}
+}
