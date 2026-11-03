@@ -1,0 +1,33 @@
+{
+    "name": "TargetCSV",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "AzureDataLakeStorage",
+            "type": "LinkedServiceReference"
+        },
+        "parameters": {
+            "targetFolder": {
+                "type": "string"
+            }
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobFSLocation",
+                "fileName": {
+                    "value": "@concat(dataset().targetFolder,'/',dataset().targetFolder,'_',formatDateTime(utcNow(), 'yyyy-MM-dd'),'.csv')",
+                    "type": "Expression"
+                },
+                "folderPath": "bronze",
+                "fileSystem": "ecommerce"
+            },
+            "columnDelimiter": ",",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": []
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}
